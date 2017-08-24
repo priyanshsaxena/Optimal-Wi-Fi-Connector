@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Run Queries</title>
+  <meta name="description" content="test-run">
+  <meta name="author" content="Priyansh Saxena" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <link rel="stylesheet" media="screen" href="css/style.css">
+  <script src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
+  <script>
+	$(window).load(function() {
+		$(".loader").fadeOut("slow");
+	});
+	jQuery(document).ready(function($) {	
+		$('.lightbox_trigger').click(function(e) {
+			e.preventDefault();
+			if ($('#lightbox').length > 0) {				
+				$('#lightbox').show();
+			}
+			else {
+				var lightbox = 
+				'<div id="lightbox">' +
+					'<p id=\"close\"></p>' +	
+				'</div>';
+				$('#particles-js').append(lightbox);
+			}
+		});
+		$('#lightbox').click(function(e) {
+			var container = $('#close');
+			if (container.is(e.target)) {
+				$('#lightbox').hide(200);
+			}
+		});
+	});
+	window.onload = function() {
+	  swal({
+		  title: "All set!",
+		  text: "You can now run your queries.",
+		  type: "success",
+		  timer: 1000,
+		  showConfirmButton: false
+		});
+	};
+  </script>
+</head>
+<body>
+
+<div class="loader"></div>
+
+<!-- particles.js container -->
+<div id="particles-js">
+
+<!-- scripts -->
+<script src="../particles.js"></script>
+
+<button class="lightbox_trigger btn btn-success" style="width:10%;float:left;display:block;position:absolute;margin-left:45%;top:320px;">Begin Querying</button>
+<div id="lightbox">
+	<img src="close.png" id="close" style="width:50px;height:50px"/>
+        <div id="wrapper">
+			<span class="name">Query 1: </span><progress id="progressBar1" value="0" max="100"></progress>
+			<span id="status1" class="status"></span><br/>
+			<span class="name">Query 2: </span><progress id="progressBar2" value="0" max="100"></progress>
+			<span id="status2" class="status"></span><br/>
+			<span class="name">Query 3: </span><progress id="progressBar3" value="0" max="100"></progress>
+			<span id="status3" class="status"></span>
+			<hr>
+			<button id="startButton" onclick='start(1,0)' class="btn btn-info">Run Queries</button>
+			<img id="load" src="loading.gif" style="margin-top:25px"/>
+		</div>
+</div>
+<script src="js/app.js"></script>
+
+</div>
+
+</body>
+</html> 
