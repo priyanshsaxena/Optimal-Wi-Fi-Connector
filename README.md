@@ -3,14 +3,14 @@
 ### Problem Statement
 
 In the Computer-Lab or hostels, if every computer connects to the same
-wireless access point, then it becomes a bootleneck and the users do not
+wireless access point, then it becomes a bottleneck and the users do not
 get high-speed connectivity. The requirement is to develop an automated
-solution that can help the user in selecting the optimal wireless access
+solution that can help users in selecting the optimal wireless access
 point so as to achieve higher connectivity speeds for all users.
 
 ### Solution Overview
 
-The software/app helps to monitor the network state and provide useful
+This software/app helps to monitor the network state and provide useful
 suggestions that can be used to achieve a balanced load on all routers and
 LAN-cable hotspots and provide better connectivity to the users, in terms
 of network-speed.
